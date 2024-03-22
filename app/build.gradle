@@ -20,6 +20,9 @@ android {
         vectorDrawables {
             useSupportLibrary true
         }
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
+        }
     }
 
     buildTypes {
@@ -75,4 +78,6 @@ dependencies {
     implementation Compose.composeNavigation
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler
+
+    implementation api(name: 'LiteAVSDK_Professional_10.9.0.13102', ext: 'aar')
 }
