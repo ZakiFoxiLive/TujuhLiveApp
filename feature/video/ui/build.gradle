@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.tujuhlive.feature.video.ui'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_18
+        targetCompatibility JavaVersion.VERSION_18
+    }
+    kotlinOptions {
+        jvmTarget = '18'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.3'
+    }
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation project(":core:api")
+    implementation project(":core:common")
+    implementation project(":feature:video:domain")
+
+    implementation Core.core
+    implementation Lifecycle.lifecycle
+    implementation Compose.activityCompose
+    implementation platform(Compose.composeBoom)
+    implementation Compose.composeUi
+    implementation Compose.composeUiGraphic
+    implementation Compose.composeUiToolingPreview
+    implementation Compose.composeMaterial3
+    testImplementation Junit.junit
+    androidTestImplementation Junit.junitTest
+    androidTestImplementation Espresso.espressoCore
+    androidTestImplementation platform(Compose.composeBoom)
+    androidTestImplementation Compose.composeJunitUiTest
+    debugImplementation Compose.composeUiTooling
+    debugImplementation Compose.composeUiTestManifest
+
+    implementation Coil.coil
+    kapt DaggerHilt.hiltCompiler
+    implementation DaggerHilt.hilt
+    implementation Compose.composeNavigation
+    implementation DaggerHilt.hiltComposeNavigation
+}
