@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.tujuhlive.live.composable'
+    namespace 'com.tujuhlive.app.composable'
     compileSdk 34
 
     defaultConfig {
@@ -66,6 +66,7 @@ dependencies {
     debugImplementation Compose.composeUiTooling
     debugImplementation Compose.composeUiTestManifest
 
+    implementation Coil.coil
     implementation Compose.composeNavigation
     implementation api(name: 'LiteAVSDK_Professional_10.9.0.13102', ext: 'aar')
 }

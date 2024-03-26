@@ -1,7 +1,6 @@
 package com.tujuhlive.feature.video.ui.navigation.screen
 
 import android.util.Log
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
@@ -12,9 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import com.tujuhlive.live.composable.VideoScrollLayout
+import com.tujuhlive.app.composable.VideoScrollLayout
 
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ForYouVideoScreen(viewModel: ForYouVideoViewModel) {
     val result = viewModel.videoList.value
