@@ -17,6 +17,7 @@ object Version{
     const val composeNavigation = "2.7.7"
     const val coil = "2.6.0"
     const val hiltComposeNavigation = "1.0.0"
+    const val eventBus = "3.0.0"
 }
 object Core{
     const val core = "androidx.core:core-ktx:${Version.core}"
@@ -74,4 +75,8 @@ object Kotlin{
 
 object Coil{
     const val coil = "io.coil-kt:coil-compose:${Version.coil}"
+}
+
+object EventBus{
+    const val eventBus = "org.greenrobot:eventbus:${Version.eventBus}"
 }

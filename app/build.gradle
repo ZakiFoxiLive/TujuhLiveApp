@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.tujuhlive.live'
+    namespace 'com.tujuhlive.app'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.tujuhlive.live"
+        applicationId "com.tujuhlive.app"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -76,6 +76,7 @@ dependencies {
     debugImplementation Compose.composeUiTestManifest
 
     implementation Compose.composeNavigation
+    implementation EventBus.eventBus
     implementation DaggerHilt.hilt
     kapt DaggerHilt.hiltCompiler
 
