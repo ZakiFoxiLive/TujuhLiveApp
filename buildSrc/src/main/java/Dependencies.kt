@@ -18,6 +18,7 @@ object Version{
     const val coil = "2.6.0"
     const val hiltComposeNavigation = "1.0.0"
     const val eventBus = "3.0.0"
+    const val liteAv = "latest.release"
 }
 object Core{
     const val core = "androidx.core:core-ktx:${Version.core}"
@@ -79,4 +80,7 @@ object Coil{
 
 object EventBus{
     const val eventBus = "org.greenrobot:eventbus:${Version.eventBus}"
+}
+object LiteAv{
+    const val liteAv = "com.tencent.liteav:LiteAVSDK_Professional:${Version.liteAv}"
 }

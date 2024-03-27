@@ -14,6 +14,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "String", "serverHost", "\"" + AppConfiguration.serverHost + "\""
     }
 
     buildTypes {
@@ -28,6 +30,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '18'
+    }
+    buildFeatures {
+        buildConfig true
     }
 }
 
