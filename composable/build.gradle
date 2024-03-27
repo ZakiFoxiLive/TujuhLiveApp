@@ -67,6 +67,6 @@ dependencies {
     debugImplementation Compose.composeUiTestManifest
 
     implementation Coil.coil
+    implementation LiteAv.liteAv
     implementation Compose.composeNavigation
-    implementation api(name: 'LiteAVSDK_Professional_10.9.0.13102', ext: 'aar')
 }

@@ -1,6 +1,7 @@
 package com.tujuhlive.core.network.di
 
 import com.tujuhlive.core.network.ApiService
+import com.tujuhlive.core.network.BuildConfig
 import com.tujuhlive.core.network.dataProviders.VideoDataProviders
 import dagger.Module
 import dagger.Provides
@@ -16,7 +17,7 @@ object NetworkModule {
     fun provideApiService():ApiService{
         return Retrofit
             .Builder()
-            .baseUrl("https://api-prd.tujuhlive.com/")
+            .baseUrl(BuildConfig.serverHost)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)

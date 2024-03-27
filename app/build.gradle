@@ -23,6 +23,11 @@ android {
         ndk {
             abiFilters "armeabi", "armeabi-v7a", "arm64-v8a"
         }
+
+        manifestPlaceholders.serverHost = AppConfiguration.serverHost
+
+        buildConfigField "String", "liveKey", "\"" + AppConfiguration.liveKey + "\""
+        buildConfigField "String", "liveLicenceUrl", "\"" + AppConfiguration.liveLicenceUrl + "\""
     }
 
     buildTypes {
@@ -40,6 +45,7 @@ android {
     }
     buildFeatures {
         compose true
+        buildConfig true
     }
     composeOptions {
         kotlinCompilerExtensionVersion '1.4.3'
@@ -78,7 +84,6 @@ dependencies {
     implementation Compose.composeNavigation
     implementation EventBus.eventBus
     implementation DaggerHilt.hilt
+    implementation LiteAv.liteAv
     kapt DaggerHilt.hiltCompiler
-
-    implementation api(name: 'LiteAVSDK_Professional_10.9.0.13102', ext: 'aar')
 }
